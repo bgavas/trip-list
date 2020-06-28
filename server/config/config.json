@@ -1,0 +1,20 @@
+{
+	"test": {
+		"API_URL": "http://localhost:5353",
+		"MONGO_URI": "mongodb+srv://user9281:sUvNzESn48M2AWk@assignmentcluster-doq69.mongodb.net/case",
+		"PORT": 5353,
+		"JWT_SECRET": "test"
+	},
+	"development": {
+		"API_URL": "http://localhost:5353",
+		"MONGO_URI": "mongodb+srv://user9281:sUvNzESn48M2AWk@assignmentcluster-doq69.mongodb.net/case",
+		"PORT": 5353,
+		"JWT_SECRET": "dev"
+	},
+	"production": {
+		"API_URL": "https://port-api-main.azurewebsites.net",
+		"MONGO_URI": "mongodb+srv://user9281:sUvNzESn48M2AWk@assignmentcluster-doq69.mongodb.net/case",
+		"PORT": 5353,
+		"JWT_SECRET": "FgSygtWxRV878uvtRqAJ4fLBEfHunBAS"
+	}
+}
