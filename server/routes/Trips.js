@@ -1,5 +1,6 @@
 const RouteHelper = require('./../helper/RouteHelper');
 const GetTrips = require('./../controllers/v1/trips/GetTrips');
+const GetMinMax = require('./../controllers/v1/trips/GetMinMax');
 
 class Trips {
 
@@ -12,6 +13,15 @@ class Trips {
             fallbackVersion: 'v1',
             handlers: [],
             path: '/',
+            authentication: true,
+            type: 'get',
+            versions: ['v1']
+        }, {
+            init: new GetMinMax().init,
+            description: 'Get min and max distance travelled',
+            fallbackVersion: 'v1',
+            handlers: [],
+            path: '/min-max',
             authentication: true,
             type: 'get',
             versions: ['v1']
