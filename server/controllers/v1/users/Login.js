@@ -25,7 +25,7 @@ class Login {
                 }
 
                 // Create token
-                token = 'Bearer ' + jwt.sign({
+                token = jwt.sign({
                     _id: user._id,
                     exp: Math.floor(Date.now() / 1000) + EXPIRATION.JWT_TOKEN
                 }, process.env.JWT_SECRET).toString();
@@ -71,7 +71,7 @@ module.exports = Login;
 /**
  * @swagger
  * /api/v1/users/login:
- *   get:
+ *   post:
  *     tags:
  *       - User
  *     description: Login
