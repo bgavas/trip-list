@@ -7,6 +7,20 @@ module.exports = {
             en: 'Please login to the system'
         }
     },
+    USER_NOT_FOUND: {
+        code: 1001,
+        message: {
+            tr: 'Böyle bir kullanıcı bulunamadı.',
+            en: 'No user found with this username'
+        }
+    },
+    INCORRECT_CREDENTIALS: {
+        code: 1002,
+        message: {
+            tr: 'Şifre veya kullanıcı adı hatalı',
+            en: 'Password or username is wrong'
+        }
+    },
     UNKNOWN_ERROR: {
         code: 4000,
         message: {

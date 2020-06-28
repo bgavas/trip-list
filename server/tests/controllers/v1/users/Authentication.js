@@ -25,6 +25,7 @@ class Authentication {
                     .expect(200)
                     .expect(res => {
                         expect(res.headers[HEADER.AUTHORIZATION]).toBeTruthy();
+                        expect(res.body.data.user._id).toBe(mockDb.users[0]._id.toHexString());
                     })
                     .end(done);
     
@@ -44,6 +45,7 @@ class Authentication {
                     .expect(res => {
                         expect(res.headers[HEADER.AUTHORIZATION]).toBeTruthy();
                         expect(token).not.toBe(res.headers[HEADER.AUTHORIZATION]);
+                        expect(res.body.data.user._id).toBe(mockDb.users[0]._id.toHexString());
                     })
                     .end(done);
     
