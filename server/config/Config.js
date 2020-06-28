@@ -8,7 +8,9 @@ class Config {
 	}
 
 	setEnvKeys() {
-			
+
+		// In a normal app, production variables are set by server
+		// For this task, I set variables here because there is no security issue
 		const conf = require('./config.json');
 
 		// Get keys according to the environment

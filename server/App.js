@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const { AVAILABLE_VERSIONS } = require('./utils/constants');
 const logger = require('./utils/logger');
 const Database = require('./databases/Database');
+const Default = require('./middlewares/Default');
 // const Result = require('./middlewares/Result');
 const Swagger = require('./middlewares/Swagger');
 const routes = require('./routes/index');
@@ -39,6 +40,8 @@ class App {
 
         // Swagger
         this.swagger.initialize(this.app);
+        // Default
+        this.app.use((req, res, next) => new Default(req, res, next));
         // Routes
         this.initializeRoutes();
         // Result
