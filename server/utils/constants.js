@@ -12,6 +12,11 @@ module.exports = {
 
     DEFAULT_LANGUAGE : 'tr',
 
+    // Response headers
+    HEADER: {
+        AUTHORIZATION: 'authorization',
+    },
+
     RESPONSE_STATUS: {
         FAIL: 'Fail',
         SUCCESS: 'Success',

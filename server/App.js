@@ -5,7 +5,7 @@ const { AVAILABLE_VERSIONS } = require('./utils/constants');
 const logger = require('./utils/logger');
 const Database = require('./databases/Database');
 // const Result = require('./middlewares/Result');
-// const Swagger = require('./middlewares/Swagger');
+const Swagger = require('./middlewares/Swagger');
 const routes = require('./routes/index');
 
 class App {
@@ -14,7 +14,7 @@ class App {
 
         // Create app
         this.app = express();
-        // this.swagger = new Swagger();
+        this.swagger = new Swagger();
 
         // Fetch port
         this.port = process.env.PORT;
@@ -38,9 +38,9 @@ class App {
         this.app.use(bodyParser.json());
 
         // Swagger
-        // this.swagger.initialize(this.app);
+        this.swagger.initialize(this.app);
         // Routes
-        // this.initializeRoutes();
+        this.initializeRoutes();
         // Result
         // this.app.use((result, req, res, next) => new Result(result, req, res, next));
 
