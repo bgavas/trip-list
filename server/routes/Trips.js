@@ -1,6 +1,7 @@
 const RouteHelper = require('./../helper/RouteHelper');
 const GetTrips = require('./../controllers/v1/trips/GetTrips');
 const GetMinMax = require('./../controllers/v1/trips/GetMinMax');
+const GetReport = require('./../controllers/v1/trips/GetReport');
 
 class Trips {
 
@@ -22,6 +23,15 @@ class Trips {
             fallbackVersion: 'v1',
             handlers: [],
             path: '/min-max',
+            authentication: true,
+            type: 'get',
+            versions: ['v1']
+        }, {
+            init: new GetReport().init,
+            description: 'Get vehicle year report',
+            fallbackVersion: 'v1',
+            handlers: [],
+            path: '/report',
             authentication: true,
             type: 'get',
             versions: ['v1']
