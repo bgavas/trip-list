@@ -5,7 +5,7 @@ const { AVAILABLE_VERSIONS } = require('./utils/constants');
 const logger = require('./utils/logger');
 const Database = require('./databases/Database');
 const Default = require('./middlewares/Default');
-// const Result = require('./middlewares/Result');
+const Result = require('./middlewares/Result');
 const Swagger = require('./middlewares/Swagger');
 const routes = require('./routes/index');
 
@@ -45,7 +45,7 @@ class App {
         // Routes
         this.initializeRoutes();
         // Result
-        // this.app.use((result, req, res, next) => new Result(result, req, res, next));
+        this.app.use((result, req, res, next) => new Result(result, req, res, next));
 
     }
 
