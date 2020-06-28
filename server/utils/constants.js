@@ -17,6 +17,10 @@ module.exports = {
         AUTHORIZATION: 'authorization',
     },
 
+    EXPIRATION: {
+        JWT_TOKEN: 60 * 60 // in seconds
+    },
+
     RESPONSE_STATUS: {
         FAIL: 'Fail',
         SUCCESS: 'Success',

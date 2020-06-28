@@ -12,7 +12,7 @@ class Users {
             fallbackVersion: 'v1',
             handlers: [],
             path: '/self/authentication',
-            userAuthentication: true,
+            authentication: true,
             type: 'get',
             versions: ['v1']
         }];

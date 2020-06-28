@@ -1,4 +1,4 @@
-// const Authentication = require('./../middlewares/Authentication');
+const Authentication = require('./../middlewares/Authentication');
 
 class RouteHelper {
 
@@ -16,7 +16,7 @@ class RouteHelper {
 
             // Set handlers
             let handlers = [];
-            // if (endpoint.userAuthentication) handlers.push(Authentication.user);
+            if (endpoint.authentication) handlers.push(Authentication.user);
             handlers = handlers.concat(endpoint.handlers);
 
             // Set controller

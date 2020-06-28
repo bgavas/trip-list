@@ -41,16 +41,16 @@ class Swagger {
 
     }
 
-    initialize(app) {
+    initialize(api) {
 
         // Swagger.json get
-        app.get('/swagger.json', (req, res) => {
+        api.get('/swagger.json', (req, res) => {
             res.setHeader('Content-Type', 'application/json');
             res.send(this.swaggerSpec);
         });
     
         // Initialize ui
-        app.use('/swagger', swaggerUi.serve, swaggerUi.setup(this.swaggerSpec));
+        api.use('/swagger', swaggerUi.serve, swaggerUi.setup(this.swaggerSpec));
 
     }
 

@@ -47,8 +47,6 @@ class Result {
 			error: null
 		};
 
-		let status = 200;
-
 		let logError = errors.UNKNOWN_ERROR;
 
 		// Known error
@@ -58,7 +56,6 @@ class Result {
 		}
 		// Unknown error
 		else {
-			status = 400;
 			returnObject.error = {
 				code: errors.UNKNOWN_ERROR.code,
 				message: errors.UNKNOWN_ERROR.message[req.language]
@@ -73,7 +70,7 @@ class Result {
 		logger.warn(trace);
 
 		// Error
-		return res.status(status).send(returnObject);
+		return res.status(400).send(returnObject);
 
 	}
 

@@ -31,6 +31,10 @@ class Database {
 
     }
 
+    getConnection() {
+        return _connection;
+    }
+
     setModels() {
         const models = require('./../models');
         this.models = models.models;

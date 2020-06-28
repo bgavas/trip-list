@@ -13,8 +13,8 @@ class App {
 
     constructor() {
 
-        // Create app
-        this.app = express();
+        // Create api
+        this.api = express();
         this.swagger = new Swagger();
 
         // Fetch port
@@ -33,33 +33,33 @@ class App {
 
     initializeMiddleware() {
 
-        // App middlewares
-        this.app.enable('trust proxy');
-        this.app.use(helmet());
-        this.app.use(bodyParser.json());
+        // Api middlewares
+        this.api.enable('trust proxy');
+        this.api.use(helmet());
+        this.api.use(bodyParser.json());
 
         // Swagger
-        this.swagger.initialize(this.app);
+        this.swagger.initialize(this.api);
         // Default
-        this.app.use((req, res, next) => new Default(req, res, next));
+        this.api.use((req, res, next) => new Default(req, res, next));
         // Routes
         this.initializeRoutes();
         // Result
-        this.app.use((result, req, res, next) => new Result(result, req, res, next));
+        this.api.use((result, req, res, next) => new Result(result, req, res, next));
 
     }
 
     initializeRoutes() {
 
         // Dummy route for raw url
-        this.app.get('/', (req, res) => res.status(200).send('Trip List: Running'));
+        this.api.get('/', (req, res) => res.status(200).send('Trip List: Running'));
 
         // Define routes
         Object.keys(routes).forEach(key => {
             // Versioning
             AVAILABLE_VERSIONS.forEach(version => {
                 const route = new routes[key]();
-                this.app.use(`/api/${version}/` + key, route.init(version));
+                this.api.use(`/api/${version}/` + key, route.init(version));
             });
         });
         
@@ -67,7 +67,7 @@ class App {
 
     startServer() {
         // Start server
-        this.app.listen(this.port, () => {
+        this.api.listen(this.port, () => {
             logger.info('App started at PORT: ' + this.port);
         });
     }

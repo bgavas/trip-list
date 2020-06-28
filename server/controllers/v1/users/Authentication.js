@@ -1,31 +1,20 @@
+const _ = require('lodash');
 const { RESPONSE_STATUS } = require('./../../../utils/constants');
 
 class Authentication {
 
     init(req, res, next) {
 
-        const { app } = require('./../../../index');
-        const models = app.portDatabase.models;
-
         let user = req.user;
 
         // Success
-        return models.user
-            .getUser(user.id)
-            // Success
-            .then(user => next({
-                data: {
-                    user: user.toUserObject()
-                },
-                message: `Successful authentication by user (${user.id} - ${user.name + ' ' + user.surname})`,
-                status: RESPONSE_STATUS.SUCCESS
-            }))
-            // Fail
-            .catch(err => next({
-                data: err,
-                message: `Authentication failed for user (${user.id} - ${user.name + ' ' + user.surname})`,
-                status: RESPONSE_STATUS.FAIL
-            }));
+        return next({
+            data: {
+                user: _.pick(user, ['_id', 'name', 'surname', 'username'])
+            },
+            message: `Successful authentication by user (${user._id} - ${user.name + ' ' + user.surname})`,
+            status: RESPONSE_STATUS.SUCCESS
+        });
 
     }
 
