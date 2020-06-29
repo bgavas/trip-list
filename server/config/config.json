@@ -12,7 +12,7 @@
 		"JWT_SECRET": "dev"
 	},
 	"production": {
-		"API_URL": "https://port-api-main.azurewebsites.net",
+		"API_URL": "https://trip-list-task.herokuapp.com",
 		"MONGO_URI": "mongodb+srv://user9281:sUvNzESn48M2AWk@assignmentcluster-doq69.mongodb.net/case",
 		"JWT_SECRET": "FgSygtWxRV878uvtRqAJ4fLBEfHunBAS"
 	}

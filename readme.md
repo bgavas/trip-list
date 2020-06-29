@@ -8,7 +8,7 @@
 
 ## Start server on local machine
 - `npm start`
-- API URL = http://localhost:5353/
+- API URL = http://localhost:5353
 - Swagger URL = http://localhost:5353/swagger
 
 ## Start auto testing on local machine
@@ -23,5 +23,5 @@
 ----
 
 ## Heroku
-- API URL = http://localhost:5353/
-- Swagger URL = http://localhost:5353/swagger
+- API URL = https://trip-list-task.herokuapp.com
+- Swagger URL = https://trip-list-task.herokuapp.com/swagger
