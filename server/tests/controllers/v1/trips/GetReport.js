@@ -26,7 +26,7 @@ class GetReport {
                     .set(HEADER.AUTHORIZATION, token)
                     .expect(200)
                     .expect(res => {
-                        expect(res.body.data.trips.length).toBeGreaterThan(0);
+                        expect(res.body.data.yearReport.length).toBeGreaterThan(0);
                     })
                     .end(done);
     

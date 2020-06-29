@@ -46,7 +46,7 @@ class GetReport {
             // Success
             .then(trips => next({
                 data: {
-                    trips: trips.sort((a, b) => a.year > b.year ? -1 : 1)
+                    yearReport: trips.sort((a, b) => a.year > b.year ? -1 : 1)
                 },
                 message: `Report succesfully created by the user (${user.id} - ${user.name + ' ' + user.surname})`,
                 status: RESPONSE_STATUS.SUCCESS
