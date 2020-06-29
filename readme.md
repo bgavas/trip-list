@@ -25,3 +25,9 @@
 ## Heroku
 - API URL = https://trip-list-task.herokuapp.com
 - Swagger URL = https://trip-list-task.herokuapp.com/swagger
+
+----
+
+## User Login Credentials
+- username: username1
+- password: 123456
