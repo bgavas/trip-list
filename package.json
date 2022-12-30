@@ -34,7 +34,7 @@
   "devDependencies": {
     "expect": "^26.1.0",
     "jest": "^26.1.0",
-    "mocha": "^8.0.1",
+    "mocha": "^8.4.0",
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
   }
